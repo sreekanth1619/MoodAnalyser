@@ -1,38 +1,24 @@
 package com.bridgelabs.moodanalyser;
 /**
- * Purpose  - “I am in Sad Mood” message Should Return SAD
+ * Purpose  - Given Null Mood Should Return Happy
  * @author  - N Sreekanth
  * @version - 16.0
  *
  */
 public class MoodAnalyser {
-	  public static String message;
-
-	    // Constructor
-	    public MoodAnalyser(String message) {
-	        this.message = message;
-	        analyseMood();
-	    }
-
-	    //Getter
-	    public String getMessage() {
-	        return message;
-	    }
-
-	    //Setter
-	    public void setMessage(String message) {
-	        this.message = message;
-	    }
-
-	    public static String analyseMood() {
-	        try {
-	            if (message.toLowerCase().contains("sad")) {
-	                return "Sad";
-	            } else {
-	                return "Happy";
-	            }
-	        } catch (NullPointerException e) {
+	 public static String analyseMood(String message) {
+	        if (message.toLowerCase().contains("sad")) {
+	            return "Sad";
+	        } else if (message.toLowerCase().contains("happy")) {
 	            return "Happy";
 	        }
+	        return null;
 	    }
-}
+
+	    public static void main(String[] args) {
+	        String mood = MoodAnalyser.analyseMood("User is Happy");
+	        System.out.println(mood);
+	        mood = MoodAnalyser.analyseMood("User is Sad");
+	        System.out.println(mood);
+	    }
+	    }
