@@ -1,6 +1,6 @@
 package com.bridgelabs.moodanalyser;
 /**
- * Purpose  - “I am in Happy Mood” message in Constructor Should Return Happy
+ * Purpose  -  Handle Exception if User Provides Invalid Mood
  * @author  - N Sreekanth
  * @version - 16.0
  *
@@ -24,12 +24,15 @@ public class MoodAnalyser {
 	        this.message = message;
 	    }
 
-	    public String analyseMood() {
-
-	        if (message.toLowerCase().contains("sad")) {
-	            return "Sad";
-	        } else if (message.toLowerCase().contains("happy")) {
+	    public static String analyseMood() {
+	        try {
+	            if (message.toLowerCase().contains("sad")) {
+	                return "Sad";
+	            } else {
+	                return "Happy";
+	            }
+	        } catch (NullPointerException e) {
+	            return "Exception Handled";
 	        }
-	        return "Happy";
 	    }
 	    }
