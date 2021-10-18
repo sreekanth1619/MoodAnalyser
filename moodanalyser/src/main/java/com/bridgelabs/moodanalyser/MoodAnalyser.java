@@ -1,6 +1,6 @@
 package com.bridgelabs.moodanalyser;
 /**
- * Purpose  - Given Null Mood Should Return Happy
+ * Purpose  - “I am in Happy Mood” message in Constructor Should Return Happy
  * @author  - N Sreekanth
  * @version - 16.0
  *
